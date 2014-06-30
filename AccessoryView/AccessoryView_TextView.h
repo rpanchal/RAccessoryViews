@@ -1,9 +1,9 @@
 //
-//  AccessoryView_TextView.h
-//  WeDeliver
+//  AccessoryView_Base.h
+//  Rohan Panchal
 //
 //  Created by Rohan on 1/21/14.
-//  Copyright (c) 2014 We Deliver. All rights reserved.
+//  Copyright (c) 2014 Rohan Panchal. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -35,6 +35,6 @@
  *
  *  @return (id) self
  */
--(id)initWithTextField:(UITextView*)pTextView andOptions:(AVButtonOptions)buttonOptions;
+-(id)initWithTextView:(UITextView*)pTextView andOptions:(AVButtonOptions)buttonOptions;
 
 @end

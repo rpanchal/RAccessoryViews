@@ -1,9 +1,9 @@
 //
-//  AvvessoryView_Base.h
-//  WeDeliver
+//  AccessoryView_Base.h
+//  Rohan Panchal
 //
 //  Created by Rohan on 1/21/14.
-//  Copyright (c) 2014 We Deliver. All rights reserved.
+//  Copyright (c) 2014 Rohan Panchal. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -15,6 +15,8 @@ typedef enum {
     AVButtonOptionsDone = 1,
     AVButtonOptionsIter = 2,
     AVButtonOptionsDoneAndIter = 3,
+//    AVButtonOptionsDoneAndNext = 4,
+//    AVButtonOptionsDoneAndPrev = 5
 
 } AVButtonOptions;
 
@@ -29,7 +31,7 @@ typedef enum {
  *  @param segCtl        The UISegmentedControl which contains this button
  *  @param view          The ownerView
  */
--(void)AccessoryView:(AccessoryView_Base*)accessoryView tappedPrevSegmentedControl:(UISegmentedControl*)segCtl fromView:(UIView*)view;
+-(void)AccessoryView:(AccessoryView_Base*)accessoryView tappedPrevSegmentedControl:(UISegmentedControl*)segCtl fromView:(UIView*)ownerView;
 
 /**
  *  Delegate method called when the next button is tapped
@@ -38,7 +40,7 @@ typedef enum {
  *  @param segCtl        The UISegmentedControl which contains this button
  *  @param view          The ownerView
  */
--(void)AccessoryView:(AccessoryView_Base*)accessoryView tappedNextSegmentedControl:(UISegmentedControl*)segCtl fromView:(UIView*)view;
+-(void)AccessoryView:(AccessoryView_Base*)accessoryView tappedNextSegmentedControl:(UISegmentedControl*)segCtl fromView:(UIView*)ownerView;
 
 /**
  *  Delegate method called when the done button is tapped
@@ -47,7 +49,7 @@ typedef enum {
  *  @param btnDone       The UIBarButtonItem which was tapped
  *  @param view          The ownerView
  */
--(void)AccessoryView:(AccessoryView_Base*)accessoryView tappedDone:(UIBarButtonItem*)btnDone fromView:(UIView*)view;
+-(void)AccessoryView:(AccessoryView_Base*)accessoryView tappedDone:(UIBarButtonItem*)btnDone fromView:(UIView*)ownerView;
 
 
 
@@ -88,6 +90,9 @@ typedef enum {
  */
 @property (nonatomic, retain) UISegmentedControl *segCtlIter;
 
+
+
+
 /**
  *  Init method which takes AVButtonOptions as parameters for how the InputAccessoryView will look
  *
@@ -96,6 +101,9 @@ typedef enum {
  *  @return (id) self
  */
 -(id)initWithOptions:(AVButtonOptions)buttonOptions;
+
+
+
 
 
 @end

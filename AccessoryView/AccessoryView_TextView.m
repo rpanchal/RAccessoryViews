@@ -1,9 +1,9 @@
 //
-//  AccessoryView_TextView.m
-//  WeDeliver
+//  AccessoryView_Base.h
+//  Rohan Panchal
 //
 //  Created by Rohan on 1/21/14.
-//  Copyright (c) 2014 We Deliver. All rights reserved.
+//  Copyright (c) 2014 Rohan Panchal. All rights reserved.
 //
 
 #import "AccessoryView_TextView.h"
@@ -23,7 +23,7 @@
     return self;
 }
 
--(id)initWithTextField:(UITextView*)pTextView andOptions:(AVButtonOptions)buttonOptions {
+-(id)initWithTextView:(UITextView*)pTextView andOptions:(AVButtonOptions)buttonOptions {
 
     self = [super initWithOptions:buttonOptions];
     if (self) {
