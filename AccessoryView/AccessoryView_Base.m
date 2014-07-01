@@ -156,7 +156,7 @@
         case 8:
         {
             
-            [itemsArray addObject:[self generateBarButtonWithTextFieldWithWidth:320]];
+            [itemsArray addObject:[self generateBarButtonWithTextFieldWithWidth:290]];
            
             [self.toolbar setItems:itemsArray];
             
@@ -210,6 +210,10 @@
     self.textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, width, 40)];
     
     self.textField.placeholder = @"text";
+    
+    self.textField.borderStyle = UITextBorderStyleRoundedRect;
+    
+    self.ownerView = self.textField;
     
     return self.textField;
 }

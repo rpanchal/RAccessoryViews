@@ -48,6 +48,7 @@
     self.TV_Tag3.inputAccessoryView = TV_AccessoryView;
     
 
+    [self.TF_AccessoryView_1.textField becomeFirstResponder];
     
     
 	// Do any additional setup after loading the view, typically from a nib.
