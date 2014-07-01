@@ -489,6 +489,7 @@
 				0DFD615D19620F820086300F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0DFD615E19620F820086300F /* Build configuration list for PBXNativeTarget "RAccessoryView-TestTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +498,7 @@
 				0DFD616019620F820086300F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,9 +14,14 @@ typedef enum {
     AVButtonOptionsNone = 0,
     AVButtonOptionsDone = 1,
     AVButtonOptionsIter = 2,
-    AVButtonOptionsDoneAndIter = 3,
-//    AVButtonOptionsDoneAndNext = 4,
-//    AVButtonOptionsDoneAndPrev = 5
+    AVButtonOptionsNext = 3,
+    AVButtonOptionsPrev = 4,
+    AVButtonOptionsDoneAndIter = 5,
+    AVButtonOptionsDoneAndNext = 6,
+    AVButtonOptionsDoneAndPrev = 7,
+    AVButtonOptionsTextField = 8,
+    AVButtonOptionsTextFieldAndDone = 9,
+    AVButtonOptionsTextFieldAndIter = 10
 
 } AVButtonOptions;
 
@@ -89,6 +94,9 @@ typedef enum {
  *  UISegmentedControl which contains the prev/next buttons. For UIControlEvent:UIControlEventValueChanged the appropriate delegate method is triggered for prev/next: AccessoryView:tappedNextSegmentedControl:fromView | AccessoryView:tappedPrevSegmentedControl:fromView
  */
 @property (nonatomic, retain) UISegmentedControl *segCtlIter;
+
+
+@property (nonatomic, retain) UITextField *textField;
 
 
 
