@@ -96,6 +96,10 @@ typedef enum {
 @property (nonatomic, retain) UISegmentedControl *segCtlIter;
 
 
+
+@property (nonatomic, retain) UIBarButtonItem *textFieldBarButton;
+
+
 @property (nonatomic, retain) UITextField *textField;
 
 
