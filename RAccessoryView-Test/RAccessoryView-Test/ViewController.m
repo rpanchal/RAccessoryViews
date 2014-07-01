@@ -35,15 +35,15 @@
 {
     [super viewDidLoad];
     
-    self.TF_AccessoryView_1 = [[AccessoryView_TextField alloc] initWithTextField:TF_Tag1 andOptions:AVButtonOptionsIter];
+    self.TF_AccessoryView_1 = [[AccessoryView_TextField alloc] initWithTextField:TF_Tag1 andOptions:AVButtonOptionsTextField];
     self.TF_AccessoryView_1.delegate = self;
     self.TF_Tag1.inputAccessoryView = TF_AccessoryView_1;
     
-    self.TF_AccessoryView_2 = [[AccessoryView_TextField alloc] initWithTextField:TF_Tag2 andOptions:AVButtonOptionsIter];
+    self.TF_AccessoryView_2 = [[AccessoryView_TextField alloc] initWithTextField:TF_Tag2 andOptions:AVButtonOptionsTextFieldAndDone];
     TF_AccessoryView_2.delegate = self;
     self.TF_Tag2.inputAccessoryView = TF_AccessoryView_2;
     
-    TV_AccessoryView = [[AccessoryView_TextView alloc] initWithTextView:TV_Tag3 andOptions:AVButtonOptionsDoneAndIter];
+    TV_AccessoryView = [[AccessoryView_TextView alloc] initWithTextView:TV_Tag3 andOptions:AVButtonOptionsTextFieldAndIter];
     TV_AccessoryView.delegate = self;
     self.TV_Tag3.inputAccessoryView = TV_AccessoryView;
     

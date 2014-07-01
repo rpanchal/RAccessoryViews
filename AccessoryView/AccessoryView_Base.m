@@ -160,42 +160,57 @@
             break;
             
         case 8:
+        {
             
-            self.textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 260, 40)];
+            self.textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
             
-            [self.toolbar setItems:[NSArray arrayWithObject:self.textField]];
+            self.textField.placeholder = @"text";
+            
+            UIBarButtonItem *textFieldBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.textField];
+            
+            [self.toolbar setItems:[NSArray arrayWithObject:textFieldBarButtonItem]];
             
             [self addSubview:self.toolbar];
             
             break;
-            
+        }
         case 9:
-
-            self.textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 260, 40)];
+        {
+            self.textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 240, 40)];
+            
+            self.textField.placeholder = @"text";
+            
+            UIBarButtonItem *textFieldBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.textField];
             
             self.btnDone = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(btnDone_Clicked:)];
             
-            [self.toolbar setItems:[NSArray arrayWithObjects:self.textField, self.btnDone, nil]];
+            [self.toolbar setItems:[NSArray arrayWithObjects:textFieldBarButtonItem, self.btnDone, nil]];
             
             [self addSubview:self.toolbar];
             
             break;
-            
+        }
         case 10:
+        {
+            self.textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
             
-            self.textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 260, 40)];
+            self.textField.placeholder = @"text";
+            
+            UIBarButtonItem *textFieldBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.textField];
             
             self.segCtlIter = [[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:@"Prev", @"Next", nil]];
             [self.segCtlIter setMomentary:YES];
             
             [self.segCtlIter addTarget:self action:@selector(segCtl_ValueChanged:) forControlEvents:UIControlEventValueChanged];
+
+            self.segCtlBarButton = [[UIBarButtonItem alloc] initWithCustomView:self.segCtlIter];
             
-            [self.toolbar setItems:[NSArray arrayWithObjects:self.textField, self.segCtlIter, nil]];
+            [self.toolbar setItems:[NSArray arrayWithObjects:textFieldBarButtonItem, self.segCtlBarButton, nil]];
             
             [self addSubview:self.toolbar];
             
             break;
-            
+        }
         default:
             break;
     }
