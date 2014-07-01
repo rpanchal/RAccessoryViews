@@ -22,8 +22,11 @@
 
 @synthesize toolbar;
 @synthesize btnDone;
+
 @synthesize segCtlBarButton;
 @synthesize segCtlIter;
+
+@synthesize textFieldBarButton;
 @synthesize textField;
 
 @synthesize optionIndex;
