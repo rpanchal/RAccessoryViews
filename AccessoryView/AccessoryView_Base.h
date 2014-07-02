@@ -121,6 +121,8 @@ typedef enum {
 -(id)initWithOptions:(AVButtonOptions)buttonOptions;
 
 
+-(id)initWithOptions:(AVButtonOptions)buttonOptions andDoneButtonName:(NSString*)btnName;
+
 
 
 

@@ -12,6 +12,8 @@
 
 @property int optionIndex;
 
+@property NSString *doneBtnName;
+
 @end
 
 @implementation AccessoryView_Base
@@ -30,6 +32,8 @@
 @synthesize textField;
 
 @synthesize optionIndex;
+
+@synthesize doneBtnName;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -55,6 +59,24 @@
         
     }
     return self;
+}
+
+-(id)initWithOptions:(AVButtonOptions)buttonOptions andDoneButtonName:(NSString*)btnName {
+    
+    self = [super initWithFrame:CGRectMake(0, 0, 320, 40)];
+    if (self) {
+        
+        self.toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];
+        
+        toolbar.barStyle = UIBarStyleDefault;
+        
+        self.optionIndex = buttonOptions;
+        
+        [self setupWithOptions:buttonOptions];
+        
+    }
+    return self;
+    
 }
 
 -(void)setupWithOptions:(AVButtonOptions)buttonOptions {
@@ -237,7 +259,7 @@
 
 -(UIBarButtonItem*)generateDoneButton {
     
-    self.btnDone = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(btnDone_Clicked:)];
+    self.btnDone = [[UIBarButtonItem alloc] initWithTitle:self.doneBtnName style:UIBarButtonItemStyleDone target:self action:@selector(btnDone_Clicked:)];
     
     return self.btnDone;
 }
