@@ -212,6 +212,34 @@
             
             break;
         }
+            
+        case 11:
+        {
+            
+            [itemsArray addObject:[self generateBarButtonWithTextFieldWithWidth:240]];
+            
+            [itemsArray addObject:[self generateBarButtonWithSegmentedControl:[NSArray arrayWithObjects:@"Next", nil]]];
+            
+            [self.toolbar setItems:itemsArray];
+            
+            [self addSubview:self.toolbar];
+            
+            break;
+            
+        }
+        case 12:
+        {
+            [itemsArray addObject:[self generateBarButtonWithTextFieldWithWidth:200]];
+            
+            [itemsArray addObject:[self generateBarButtonWithSegmentedControl:[NSArray arrayWithObjects:@"Prev", nil]]];
+            
+            [self.toolbar setItems:itemsArray];
+            
+            [self addSubview:self.toolbar];
+            
+            break;
+        }
+            
         default:
             break;
     }
@@ -262,6 +290,34 @@
     self.btnDone = [[UIBarButtonItem alloc] initWithTitle:self.doneBtnName style:UIBarButtonItemStyleDone target:self action:@selector(btnDone_Clicked:)];
     
     return self.btnDone;
+}
+
+-(CGSize)calculateSizeForDoneButton {
+    
+    UIFont *font = [UIFont fontWithName:@"Helvetica" size:14];
+    NSDictionary *userAttributes = @{NSFontAttributeName: font,
+                                     NSForegroundColorAttributeName: [UIColor blackColor]};
+    CGSize textSize = [doneBtnName sizeWithAttributes: userAttributes];
+    
+    return textSize;
+}
+
+-(CGFloat)getWidthForTextField {
+    
+    if (self.doneBtnName == nil) {
+        return 290;
+    }
+
+    
+    CGSize doneSize = [self calculateSizeForDoneButton];
+
+    CGFloat textFieldSize = 320;
+    
+    textFieldSize = textFieldSize - 15;
+    
+    textFieldSize = textFieldSize - doneSize.width;
+    
+    return textFieldSize;
 }
 
 -(IBAction)segCtl_ValueChanged:(UISegmentedControl*)control {
@@ -363,6 +419,12 @@
             
             break;
             
+        case 11:
+            [self.delegate AccessoryView:self tappedNextSegmentedControl:control fromView:self.ownerView];
+            break;
+            
+        case 12:
+            [self.delegate AccessoryView:self tappedPrevSegmentedControl:control fromView:self.ownerView];
             
         default:
             break;

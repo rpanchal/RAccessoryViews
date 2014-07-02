@@ -21,7 +21,9 @@ typedef enum {
     AVButtonOptionsDoneAndPrev = 7,
     AVButtonOptionsTextField = 8,
     AVButtonOptionsTextFieldAndDone = 9,
-    AVButtonOptionsTextFieldAndIter = 10
+    AVButtonOptionsTextFieldAndIter = 10,
+    AVButtonOptionsTextFieldAndNext = 11,
+    AVButtonOptionsTextFieldAndPrev = 12
 
 } AVButtonOptions;
 
